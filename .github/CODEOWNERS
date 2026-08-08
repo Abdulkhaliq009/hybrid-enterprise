@@ -1,0 +1,6 @@
+# Default owner for everything
+* @Abdulkhaliq009
+
+# Infrastructure requires infra review
+/infra/ @Abdulkhaliq009
+/.github/workflows/ @Abdulkhaliq009
