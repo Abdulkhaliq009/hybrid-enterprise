@@ -1,0 +1,50 @@
+replicaCount: 2
+
+image:
+  repository: acrhybrid.azurecr.io/hybrid-api
+  pullPolicy: Always
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 3000
+
+ingress:
+  enabled: true
+  className: webapprouting.kubernetes.azure.com
+  hosts:
+    - host: hybrid-api.local
+      paths:
+        - path: /
+          pathType: Prefix
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 256Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 70
+
+podDisruptionBudget:
+  enabled: true
+  minAvailable: 1
+
+networkPolicy:
+  enabled: true
+  onpremCidr: 192.168.1.0/24
+
+env:
+  DB_HOST: "192.168.178.45"
+  DB_PORT: "1433"
+  DB_NAME: "labdb"
+
+secretRef:
+  name: hybrid-api-secrets
