@@ -18,7 +18,7 @@ jobs:
     environment: dev
     if: github.event.inputs.confirm == 'FAILOVER'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Azure login (OIDC)
         uses: azure/login@v2
