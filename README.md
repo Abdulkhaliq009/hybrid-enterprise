@@ -95,6 +95,24 @@ helm upgrade --install hybrid-api ./helm/hybrid-api
 | Troubleshooting scenarios | docs/troubleshooting/ |
 | **Interview Q&A** | docs/interview/ |
 
+## Known limitations (Azure for Students)
+
+| Feature | Status | Notes |
+|---|---|---|
+| Azure Front Door Premium | Code written, not deployed | Student subscription 
+blocks Front Door. Module modules/frontdoor is complete with WAF policy (OWASP 2.1 
++ Bot Manager 1.0). Deploy on a paid subscription with one variable change. |
+| Microsoft Sentinel | Code written, not deployed | Poland Central region does not 
+support Sentinel. Module modules/sentinel has 4 KQL detection rules. Works in 
+westeurope/eastus. |
+| Azure Firewall | Disabled in dev | Cost ~€1.15/hr. Enabled in prod environment 
+config. NSGs provide equivalent perimeter control in dev. |
+| GRS storage | Replaced with LRS | GRS not supported in Poland Central. 
+Production would use GRS or RA-GRS. |
+
+These are subscription and region constraints, not design gaps. The Terraform code 
+for all features is in the repo and documented.
+
 ## Author
 
 Abdul Khaliq — Systemadministrator / Junior Cloud Engineer
