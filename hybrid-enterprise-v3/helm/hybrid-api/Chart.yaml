@@ -1,6 +1,0 @@
-apiVersion: v2
-name: hybrid-api
-description: Hybrid enterprise Node.js API for AKS
-type: application
-version: 3.0.0
-appVersion: "3.0.0"
