@@ -24,11 +24,11 @@ Azure (Front Door, AKS, Key Vault, Sentinel) connected to on-premises Windows Se
      (Managed ID)              (Prometheus·Grafana·App Insights)
                         │
               ┌─────────▼─────────┐
-              │    VPN Gateway     │  IPSec S2S
+              │    VPN Gateway    │  IPSec S2S
               └─────────┬─────────┘
                         │ encrypted tunnel
               ┌─────────▼─────────┐
-              │ Windows Server 25  │  AD DS · DNS · SQL · RRAS · Azure Arc
+              │ Windows Server 25 │  AD DS · DNS · SQL · RRAS · Azure Arc
               └───────────────────┘
 ```
 
