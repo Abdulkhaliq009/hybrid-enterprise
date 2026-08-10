@@ -12,11 +12,11 @@ Azure (Front Door, AKS, Key Vault, Sentinel) connected to on-premises Windows Se
                      INTERNET
                         │
               ┌─────────▼─────────┐
-              │  Azure Front Door  │  CDN + WAF + TLS
+              │  Azure Front Door │  CDN + WAF + TLS
               └─────────┬─────────┘
                         │
               ┌─────────▼─────────┐
-              │        AKS         │  Node.js API · Helm · HPA · Ingress
+              │        AKS        │  Node.js API · Helm · HPA · Ingress
               └─────────┬─────────┘
           ┌─────────────┼─────────────┐
           ▼             ▼             ▼
