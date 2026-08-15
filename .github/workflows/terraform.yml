@@ -41,7 +41,7 @@ jobs:
         working-directory: ${{ env.TF_DIR }}
 
       - name: tfsec
-        uses: aquasecurity/tfsec-action@v1.0.0
+        uses: aquasecurity/tfsec-action@v1.0.3
         with:
           working_directory: infra/terraform
           soft_fail: true
